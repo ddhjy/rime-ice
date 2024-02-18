@@ -19,7 +19,6 @@ schema_list:
   - schema: double_pinyin_flypy    # 小鹤双拼
   - schema: double_pinyin_ziguang  # 紫光双拼
 
-
 # 菜单
 menu:
   page_size: 5  # 候选词个数
@@ -102,7 +101,6 @@ punctuator:
     '`' : ｀
     '~' : ～
     '!' : { commit: ！ }
-    '@' : [ ＠, ☯ ]
     '#' : [ ＃, ⌘ ]
     '%' : [ ％, '°', '℃' ]
     '$' : [ ￥, '$', '€', '£', '¥', '¢', '¤' ]
@@ -119,11 +117,13 @@ punctuator:
     ']' : [ 」, 】, 〕, ］ ]
     '{' : [ 『, 〖, ｛ ]
     '}' : [ 』, 〗, ｝ ]
+    '【' : '['
+    '】' : ']'
+    '》' : '>'
+    '《' : '<'
   half_shape:
     ',' : '，'
     '.' : '。'
-    '<' : '《'
-    '>' : '》'
     '/' : '/'
     '?' : '？'
     ';' : '；'
@@ -148,10 +148,9 @@ punctuator:
     '_' : ——
     '+' : '+'
     '=' : '='
-    '[' : '【'
-    ']' : '】'
     '{' : '「'
     '}' : '」'
+  
 
 
 # 处理符合特定规则的输入码，如网址、反查
@@ -166,13 +165,12 @@ recognizer:
     # url_2: "^[A-Za-z]+[.].*"     # 句号不上屏，支持 google.com abc.txt 等网址或文件名，使用句号翻页时需要注释掉
     # colon: "^[A-Za-z]+:.*"       # 冒号不上屏
 
-
 # 快捷键
 key_binder:
   # Lua 配置: 以词定字（上屏当前词句的第一个或最后一个字），和中括号翻页有冲突
   select_first_character: "bracketleft"  # 左中括号 [
   select_last_character: "bracketright"  # 右中括号 ]
-
+  
   bindings:
     # Tab / Shift+Tab 切换光标至下/上一个拼音
     - { when: composing, accept: Shift+Tab, send: Shift+Left }
