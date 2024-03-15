@@ -77,7 +77,7 @@ preset_color_schemes:
     corner_radius: 5                          # 窗口圆角
     hilited_corner_radius: 5                  # 高亮圆角
     font_face: LXGWWenKaiScreenR                     # 候选词字体
-    font_point: 28                            # 候选字大小
+    font_point: 18                            # 候选字大小
     hilited_candidate_back_color: 0x75B100    # 第一候选项背景色
     hilited_candidate_text_color: 0xFFFFFF    # 第一候选项文字颜色
     label_font_point: 12                      # 候选编号大小
@@ -95,7 +95,7 @@ preset_color_schemes:
     corner_radius: 5                          # 窗口圆角
     hilited_corner_radius: 5                  # 高亮圆角
     font_face: LXGWWenKaiScreenR                     # 候选词字体
-    font_point: 28                            # 候选字大小
+    font_point: 18                            # 候选字大小
     hilited_candidate_back_color: 0x75B100    # 第一候选项背景色
     hilited_candidate_text_color: 0xFFFFFF    # 第一候选项文字颜色
     label_font_point: 12                      # 候选编号大小
