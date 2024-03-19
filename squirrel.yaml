@@ -26,19 +26,21 @@ show_notifications_when: never
 
 # ascii_mode、inline、no_inline、vim_mode 等等设定
 # 可参考 /Library/Input Methods/Squirrel.app/Contents/SharedSupport/squirrel.yaml
-app_options:
+# app_options:
   # com.apple.Spotlight:
   #   ascii_mode: true    # 开启默认英文
   # com.microsoft.VSCode:
   #   ascii_mode: false   # 关闭默认英文
-  dev.warp.Warp-Stable:
-    ascii_mode: true
-  com.todesktop.230313mzl4w4u92:
-    ascii_mode: true
-  com.raycast.macos:
-    ascii_mode: true
-  notion.id:
-    ascii_mode: false
+  # dev.warp.Warp-Stable:
+  #   ascii_mode: true
+  # com.todesktop.230313mzl4w4u92:
+  #   ascii_mode: true
+  # com.raycast.macos:
+  #   ascii_mode: true
+  # notion.id:
+  #   ascii_mode: false
+  # com.apple.dt.BitSkyXcode1510:
+  #   ascii_mode: true
       
 style:
   # 选择皮肤，亮色与暗色主题
