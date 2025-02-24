@@ -8,20 +8,20 @@ config_version: '2024-02-05'
 
 # 方案列表
 schema_list:
-  # 可以直接删除或注释不需要的方案，对应的 *.schema.yaml 方案文件也可以直接删除
+  # 可以直接删除或注释不需要的方案，对应的 *.schema.yaml 方案文件也可以直;接删除
   # 除了 t9，它依赖于 rime_ice，用九宫格别删 rime_ice.schema.yaml
-  - schema: rime_ice               # 雾凇拼音（全拼）
-  - schema: t9                     # 九宫格（仓输入法）
-  - schema: double_pinyin          # 自然码双拼
-  - schema: double_pinyin_abc      # 智能 ABC 双拼
-  - schema: double_pinyin_mspy     # 微软双拼
-  - schema: double_pinyin_sogou    # 搜狗双拼
+  # - schema: rime_ice               # 雾凇拼音（全拼）
+  # - schema: t9                     # 九宫格（仓输入法）
+  # - schema: double_pinyin          # 自然码双拼
+  # - schema: double_pinyin_abc      # 智能 ABC 双拼
+  # - schema: double_pinyin_mspy     # 微软双拼
+  # - schema: double_pinyin_sogou    # 搜狗双拼
   - schema: double_pinyin_flypy    # 小鹤双拼
-  - schema: double_pinyin_ziguang  # 紫光双拼
+  # - schema: double_pinyin_ziguang  # 紫光双拼
 
 # 菜单
 menu:
-  page_size: 5  # 候选词个数
+  page_size: 4  # 候选词个数
   # alternative_select_labels: [ ①, ②, ③, ④, ⑤, ⑥, ⑦, ⑧, ⑨, ⑩ ]  # 修改候选项标签
   # alternative_select_keys: ASDFGHJKL  # 如编码字符占用数字键，则需另设选字键
 
@@ -33,6 +33,8 @@ switcher:
     - F4
     - Control+grave
     - Control+Shift+grave
+    - Control+Shift+0
+
     # - Alt+grave
   save_options:  # 开关记忆（方案中的 switches），从方案选单（而非快捷键）切换时会记住的选项，需要记忆的开关不能设定 reset
     - ascii_punct
@@ -169,10 +171,11 @@ key_binder:
   select_last_character: "bracketright"  # 右中括号 ]
   
   bindings:
+
     # Tab / Shift+Tab 切换光标至下/上一个拼音
     # - { when: composing, accept: Shift+Tab, send: Shift+Left }
     # - { when: composing, accept: Tab, send: Shift+Right }
-    # Tab / Shift+Tab 翻页
+    # # Tab / Shift+Tab 翻页
     - { when: has_menu, accept: Shift+Tab, send: Page_Up }
     - { when: has_menu, accept: Tab, send: Page_Down }
 
@@ -183,10 +186,6 @@ key_binder:
     # 翻页 - =
     - { when: has_menu, accept: minus, send: Page_Up }
     - { when: has_menu, accept: equal, send: Page_Down }
-
-    # 翻页 , .
-    # - { when: paging, accept: comma, send: Page_Up }
-    # - { when: has_menu, accept: period, send: Page_Down }
 
     # 翻页 [ ]
     # - { when: paging, accept: bracketleft, send: Page_Up }
@@ -240,6 +239,10 @@ key_binder:
     - {accept: KP_8, send: 8, when: composing}
     - {accept: KP_9, send: 9, when: composing}
     - {accept: KP_Decimal, send: period, when: composing}
+
+    # 禁用上下键选词
+    - {when: has_menu, accept: Up, send: Escape}
+    - {when: has_menu, accept: Down, send: Escape}
 
 
 # 按键速查
